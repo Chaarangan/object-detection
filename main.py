@@ -1,12 +1,17 @@
 import cv2
 
+#reading images from source
 img = cv2.imread('6.jpg')
 
+
+#Getting all class names from coco
 classNames= []
 classFile = 'coco.names'
 with open(classFile,'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
 
+
+#load frozen graph and coco dataset
 configPath = 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
 weightsPath = 'frozen_inference_graph.pb'
 
